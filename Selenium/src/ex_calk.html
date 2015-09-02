@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>My First APP</title>
+	</head>
+	<body>
+	<input type="text" id="txt1"/><p>
+	<input type="button" value=" 1 " id="btn1" onclick="fNum(this)">
+	<input type="button" value=" 2 " id="btn2" onclick="fNum(this)">
+	<input type="button" value=" 3 " id="btn3" onclick="fNum(this)">
+	<input type="button" value=" + " id="btnplus" onclick="fOp(this)"><p>
+	<input type="button" value=" 4 " id="btn4" onclick="fNum(this)">
+	<input type="button" value=" 5 " id="btn5" onclick="fNum(this)">
+	<input type="button" value=" 6 " id="btn6" onclick="fNum(this)">
+	<input type="button" value=" - " id="btnminus" onclick="fOp(this)"><p>
+	<input type="button" value=" 7 " id="btn7" onclick="fNum(this)">
+	<input type="button" value=" 8 " id="btn8" onclick="fNum(this)">
+	<input type="button" value=" 9 " id="btn9" onclick="fNum(this)">
+	<input type="button" value=" * " id="btnumnog" onclick="fOp(this)"><p>
+	<input type="button" value=" 0 " id="btn0" onclick="fNum(this)">
+	<input type="button" value=" = " id="btncount" onclick="fOp(this)">
+	<input type="button" value=" / " id="btndevide" onclick="fOp(this)"><p>
+	<input type="hidden" value="" id="action"><p>
+	</body>
+	
+	<script >
+		var aNum;
+		var op;
+		
+		function fNum(p)
+		{
+			txt1.value += p.value.trim();
+		}
+		
+		function fOp(p)
+		{
+			action.value=p.value.trim();
+			if(p.value.trim() == "=")
+			{
+				var bNum = parseInt(txt1.value);
+				txt1.value = calc(aNum, bNum, op);
+			}
+			else
+			{
+				aNum = parseInt(txt1.value);
+				op = p.value.trim();
+				txt1.value = "";
+			}
+		}
+		function calc(a, b, opr)
+		{
+			var res = 0;
+			switch(opr)
+			{
+				case "+": res = a + b; break;
+				case "-": res = a - b; break;
+				case "/": res = a / b; break;
+				case "*": res = a * b; break;
+			}
+			return res;
+		}
+</script>
+	</script>
+</html>
