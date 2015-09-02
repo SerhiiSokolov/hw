@@ -1,11 +1,14 @@
 package GUI;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import javax.swing.table.AbstractTableModel;
-
 import db.*;
-import db.DS_HibernateMySQL;
+import impexp.ImpExp;
+import impexp.csvClass;
+import impexp.jsonClass;
+import impexp.xmlClass;
 import person.Person;
 
 public class TModel extends AbstractTableModel 
@@ -13,7 +16,7 @@ public class TModel extends AbstractTableModel
 	private static final long serialVersionUID = -2318023680453895975L;
 	DS ds = new DS_HibernateMySQL();
 	ArrayList<Person> pp = null;
-
+	ImpExp impexp=new csvClass();
 	public TModel() 
 	{	
 		try {
@@ -57,6 +60,24 @@ public class TModel extends AbstractTableModel
 			pp = ds.read();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void setImpType(String set) 
+	{		
+		switch (set) {
+		case "CSV":
+			impexp = new csvClass();
+			break;
+		case "JSON":
+			impexp = new jsonClass();
+			break;
+		case "XML":
+			impexp = new xmlClass();
+			break;
+		default:
+			impexp = new csvClass();
+			break;
 		}
 	}
 
@@ -146,5 +167,35 @@ public class TModel extends AbstractTableModel
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void impData() {
+		ArrayList<Person> tempPP=null;
+		String path="d:\\java\\school\\hw\\hw_14\\src\\hw_14\\";
+		File impFile=new File(path+"import."+impexp.getTip());
+		try {
+			tempPP=impexp.impPersons(impFile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		for(Person p:tempPP)
+		{
+			try {
+				ds.create(new Person(p.getId(), p.getfName(), p.getlName(), p.getAge()));
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	public void expData() {
+		String path="d:\\java\\school\\hw\\hw_14\\src\\hw_14\\";
+		File expFile=new File(path+"export."+impexp.getTip());
+		System.out.println("Begin exp to file "+path+"export."+impexp.getTip());
+		try {
+			pp = ds.read();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		impexp.expPersons(pp,expFile);
 	}
 }

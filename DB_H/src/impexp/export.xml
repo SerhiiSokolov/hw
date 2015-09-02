@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE person import PUBLIC "person data">
+<person>
+	 <data>
+		<id>"1"</id>
+		<fName>"Vasya"</fName>
+		<lName>"Pupkin"</lName>
+		<age>"32"</age>
+	 </data>
+	 <data>
+		<id>"2"</id>
+		<fName>"Petya"</fName>
+		<lName>"Pupkin"</lName>
+		<age>"33"</age>
+	 </data>
+	 <data>
+		<id>"3"</id>
+		<fName>"Misha"</fName>
+		<lName>"Kozlov"</lName>
+		<age>"48"</age>
+	 </data>
+	 <data>
+		<id>"4"</id>
+		<fName>""</fName>
+		<lName>"Kozlov"</lName>
+		<age>"48"</age>
+	 </data>
+</person>

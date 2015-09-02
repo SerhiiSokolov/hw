@@ -34,7 +34,7 @@ public class DPanel extends JPanel
 		};
 
 		JComboBox boxSelectDB=new JComboBox(selectDB);
-		boxSelectDB.setBounds(410, 10, 120, 20);
+		boxSelectDB.setBounds(420, 10, 120, 20);
 		boxSelectDB.setEditable(false);
 		add(boxSelectDB);
 		boxSelectDB.addActionListener(new ActionListener() 
@@ -48,6 +48,48 @@ public class DPanel extends JPanel
 			}
 		});
 		
+		String[] impType={
+				"CSV",
+				"JSON",
+				"XML"				
+		};
+		JComboBox boxSelectImpType=new JComboBox(impType);
+		boxSelectImpType.setBounds(420, 60, 120, 20);
+		boxSelectImpType.setEditable(false);
+		add(boxSelectImpType);
+		boxSelectImpType.addActionListener(new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String imp=(String)boxSelectImpType.getSelectedItem();
+				mdl.setImpType(imp);
+			}
+		});
+		JButton beginImport=new JButton("IMPORT");
+		beginImport.setBounds(420, 80, 120, 20);
+		add(beginImport);
+		beginImport.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mdl.impData();
+				mdl.read();
+				tbl.invalidate();
+				tbl.revalidate();
+				tbl.repaint();
+			}
+		});
+		
+		JButton beginExport=new JButton("EXPORT");
+		beginExport.setBounds(420, 100, 120, 20);
+		add(beginExport);
+		beginExport.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mdl.expData();
+			}
+		});
 		JLabel idLabel=new JLabel("Id");
 		idLabel.setBounds(10,320,100,20);		
 		add(idLabel);
