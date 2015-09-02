@@ -47,3 +47,4 @@ Temporary Items
 .jar
 .sha*
 .m2
+.gitignore

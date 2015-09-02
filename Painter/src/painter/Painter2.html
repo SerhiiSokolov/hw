@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>canvasExample</title>
+        <meta charset='utf-8' />
+    </head>
+    <body onload = "init()">
+		<canvas id="cnv" width="600" height="400" style="border-style: solid; border-width : 3px" onmousedown = "mDown(event)"/>
+     <script>
+		var flag = false;
+		var x;
+		var y;
+		function init()
+		{
+			//cnv.addEventListener('mousedown', mDown(event));
+			//cnv.onmousedown = mDown;
+			cnv.onmousemove = mMove;
+			cnv.onmouseup   = mUp;
+		}
+		function mDown(e)
+		{
+			x = e.x - cnv.offsetLeft;
+			y = e.y - cnv.offsetTop;
+			flag = true;
+		}
+		function mMove(e)
+		{
+			if(flag == true)
+			{
+				var gg = cnv.getContext("2d");
+				gg.moveTo(x,y);
+				gg.lineTo(e.x - cnv.offsetLeft,e.y - cnv.offsetTop);
+				gg.stroke();
+				x = e.x - cnv.offsetLeft;
+				y = e.y - cnv.offsetTop;			
+			}
+		}
+		function mUp(e)
+		{
+			flag = false;
+		}
+		
+	 </script>
+    </body>
+</html>
