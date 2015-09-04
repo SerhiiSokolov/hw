@@ -27,10 +27,9 @@ public class Painting extends JPanel implements MouseListener, MouseMotionListen
 		this.addMouseMotionListener(this);
 	}
 	public void paint(Graphics g) {
-		Graphics2D g2 = (Graphics2D) g;
-		
+		Graphics2D g2 = (Graphics2D) g;		
 		g2.setColor(backgroundPanel);
-		g2.fillRect(0, 0, 500, 500);
+		g2.fillRect(0, 0, this.getWidth(), this.getHeight());
 		for (MyShape s : list) {
 			g2.setColor(s.getForeground());
 			g2.setStroke(new BasicStroke(s.getLineWidth()));

@@ -106,7 +106,7 @@ public class myFrame extends JFrame {
 
 		String[] formats = getFormats();
 		for(String s:formats){
-			fileChooser.addChoosableFileFilter(new ExtFileFilter(s, "*."+s+" Р РёСЃСѓРЅРєРµ РІ С„РѕСЂРјР°С‚Рµ "+s));
+			fileChooser.addChoosableFileFilter(new ExtFileFilter(s, "*."+s+" Рисунке в формате "+s));
 		}
 
 		int result = fileChooser.showSaveDialog(null);	
