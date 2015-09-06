@@ -10,24 +10,24 @@ import person.Person;
 
 public class DS_XML implements DS {
 	ArrayList<Person> pp=null;;
-	ImpExp txt=new xmlClass();
-	String tip=txt.getTip();
-	File file =new File("import//import."+tip);
+	ImpExp source=new xmlClass();
+	String typeofSource=source.getTypeofSource();
+	File file =new File("import//import."+typeofSource);
 	@Override
 	public void create(Person p) throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		pp.add(p);
-		txt.expPersons(pp, file);
+		source.expPersons(pp, file);
 	}
 
 	@Override
 	public ArrayList<Person> read() throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -37,7 +37,7 @@ public class DS_XML implements DS {
 	@Override
 	public void update(Person p) throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -52,13 +52,13 @@ public class DS_XML implements DS {
 				tmp.setAge(p.getAge());
 			}
 		}		
-		txt.expPersons(pp, file);
+		source.expPersons(pp, file);
 	}
 
 	@Override
 	public void delete(Person p) throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -68,6 +68,6 @@ public class DS_XML implements DS {
 			i++;
 		}
 		pp.remove(i);
-		txt.expPersons(pp, file);
+		source.expPersons(pp, file);
 	}
 }

@@ -67,11 +67,11 @@ public class TModel extends AbstractTableModel
 		}
 		try {
 			pp = ds.read();
-		} catch (SQLException e) {
+		} catch (SQLException e ) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void setImpType(String set) 
 	{		
 		switch (set) {
@@ -180,8 +180,8 @@ public class TModel extends AbstractTableModel
 
 	public void impData() {
 		ArrayList<Person> tempPP=null;
-		String path="d:\\java\\school\\hw\\hw_14\\src\\hw_14\\";
-		File impFile=new File(path+"import."+impexp.getTip());
+		String path="ds//";
+		File impFile=new File(path+"import."+impexp.getTypeofSource());
 		try {
 			tempPP=impexp.impPersons(impFile);
 		} catch (FileNotFoundException e) {
@@ -197,9 +197,9 @@ public class TModel extends AbstractTableModel
 		}
 	}
 	public void expData() {
-		String path="d:\\java\\school\\hw\\hw_14\\src\\hw_14\\";
-		File expFile=new File(path+"export."+impexp.getTip());
-		System.out.println("Begin exp to file "+path+"export."+impexp.getTip());
+		String path="ds//";
+		File expFile=new File(path+"export."+impexp.getTypeofSource());
+		System.out.println("Begin exp to file "+path+"export."+impexp.getTypeofSource());
 		try {
 			pp = ds.read();
 		} catch (SQLException e) {

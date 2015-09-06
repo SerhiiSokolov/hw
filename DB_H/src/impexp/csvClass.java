@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,9 +13,9 @@ import person.Person;
 public class csvClass implements ImpExp
 {
 	ArrayList<Person> pp=null;
-	public String tip="csv";
-	public String getTip() {
-		return tip;
+	public String typeofSource="csv";
+	public String getTypeofSource() {
+		return typeofSource;
 	}
 
 	public ArrayList<Person> impPersons(File file) throws FileNotFoundException 

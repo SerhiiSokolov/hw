@@ -14,14 +14,14 @@ public class xmlClass implements ImpExp {
 
 	ArrayList<Person> pp=null;
 	Person p=null;
-	public String tip="xml";
+	public String typeofSource="xml";
 	Scanner scanner=null;
 	BufferedWriter writer = null;
 
 	@Override
-	public String getTip() 
+	public String getTypeofSource() 
 	{
-		return tip;
+		return typeofSource;
 	}
 
 	@Override

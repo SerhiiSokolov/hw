@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import person.Person;
 
 public interface ImpExp {
-	public String getTip();
+	public String getTypeofSource();
 	ArrayList<Person>impPersons(File file) throws FileNotFoundException ;
 	Person getPerson(String s);
 	void expPersons(ArrayList<Person> pp2, File expFile);
-
 }

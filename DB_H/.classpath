@@ -26,5 +26,6 @@
 	<classpathentry kind="lib" path="C:/Documents and Settings/ssv/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="C:/Documents and Settings/ssv/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/commons-csv-1.2/commons-csv-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/H2/bin/h2-1.4.188.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

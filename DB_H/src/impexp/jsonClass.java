@@ -14,13 +14,13 @@ public class jsonClass implements ImpExp {
 
 	ArrayList<Person> pp=null;
 	Person p=null;
-	public String tip="json";
+	public String typeofSource="json";
 	Scanner scanner=null;
 	BufferedWriter writer = null;
 	@Override
-	public String getTip() 
+	public String getTypeofSource() 
 	{
-		return tip;
+		return typeofSource;
 	}
 
 	@Override

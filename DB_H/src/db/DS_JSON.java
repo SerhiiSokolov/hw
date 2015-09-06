@@ -4,31 +4,30 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import impexp.ImpExp;
 import impexp.jsonClass;
 import person.Person;
 
 public class DS_JSON implements DS {
 	ArrayList<Person> pp=null;;
-	ImpExp txt=new jsonClass();
-	String tip=txt.getTip();
-	File file =new File("import//import."+tip);
+	ImpExp source=new jsonClass();
+	String typeofSource=source.getTypeofSource();
+	File file =new File("import//import."+typeofSource);
 	@Override
 	public void create(Person p) throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		pp.add(p);
-		txt.expPersons(pp, file);
+		source.expPersons(pp, file);
 	}
 
 	@Override
 	public ArrayList<Person> read() throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -38,7 +37,7 @@ public class DS_JSON implements DS {
 	@Override
 	public void update(Person p) throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -53,13 +52,13 @@ public class DS_JSON implements DS {
 				tmp.setAge(p.getAge());
 			}
 		}		
-		txt.expPersons(pp, file);
+		source.expPersons(pp, file);
 	}
 
 	@Override
 	public void delete(Person p) throws SQLException {
 		try {
-			pp = txt.impPersons(file);
+			pp = source.impPersons(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -69,6 +68,6 @@ public class DS_JSON implements DS {
 			i++;
 		}
 		pp.remove(i);
-		txt.expPersons(pp, file);
+		source.expPersons(pp, file);
 	}
 }
