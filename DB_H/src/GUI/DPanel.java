@@ -25,12 +25,15 @@ public class DPanel extends JPanel
 		sp.setBounds(10, 10, 400, 300);
 		add(sp);				
 		String[] selectDB={
-				"HibernateMySQL",
+				"Mock",
 				"MySQL",
 				"H2",
-				"Mock",
+				"HibernateMySQL",
 				"PostgreSQL",
-				"MongoDB"
+				"MongoDB",
+				"CSV",
+				"JSON",
+				"XML"
 		};
 
 		JComboBox boxSelectDB=new JComboBox(selectDB);

@@ -14,7 +14,7 @@ import person.Person;
 public class TModel extends AbstractTableModel 
 {
 	private static final long serialVersionUID = -2318023680453895975L;
-	DS ds = new DS_HibernateMySQL();
+	DS ds = new DS_Mock();
 	ArrayList<Person> pp = null;
 	ImpExp impexp=new csvClass();
 	public TModel() 
@@ -51,9 +51,18 @@ public class TModel extends AbstractTableModel
 			break;
 		case "MongoDB":
 			ds = new DS_MongoDB();
-			break;	
+			break;
+		case "CSV":
+			ds = new DS_CSV();
+			break;
+		case "JSON":
+			ds = new DS_JSON();
+			break;
+		case "XML":
+			ds = new DS_XML();
+			break;
 		default:
-			ds = new DS_HibernateMySQL();
+			ds = new DS_Mock();
 			break;
 		}
 		try {
