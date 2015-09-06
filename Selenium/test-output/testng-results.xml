@@ -1,324 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="8" total="8" passed="0">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="99" started-at="2015-09-06T12:16:02Z" finished-at="2015-09-06T12:16:02Z">
+  <suite name="Default suite" duration-ms="4833" started-at="2015-09-06T20:08:39Z" finished-at="2015-09-06T20:08:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="99" started-at="2015-09-06T12:16:02Z" finished-at="2015-09-06T12:16:02Z">
+    <test name="Default test" duration-ms="4833" started-at="2015-09-06T20:08:39Z" finished-at="2015-09-06T20:08:44Z">
       <class name="parametrizedSelenium.HHCalcTestNG">
-        <test-method status="FAIL" signature="existTest(org.openqa.selenium.WebDriver)[pri:0, instance:null]" name="existTest" duration-ms="53" started-at="2015-09-06T15:16:02Z" data-provider="parameterTestNG" finished-at="2015-09-06T15:16:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class org.openqa.selenium.firefox.FirefoxDriver]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[argument type mismatch]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: argument type mismatch
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+        <test-method status="PASS" signature="existTest()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="existTest" duration-ms="741" started-at="2015-09-06T23:08:39Z" finished-at="2015-09-06T23:08:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- existTest -->
-        <test-method status="FAIL" signature="existTest(org.openqa.selenium.WebDriver)[pri:0, instance:null]" name="existTest" duration-ms="2" started-at="2015-09-06T15:16:02Z" data-provider="parameterTestNG" finished-at="2015-09-06T15:16:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class org.openqa.selenium.chrome.ChromeDriver]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[argument type mismatch]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: argument type mismatch
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- existTest -->
-        <test-method status="FAIL" signature="existTest(org.openqa.selenium.WebDriver)[pri:0, instance:null]" name="existTest" duration-ms="1" started-at="2015-09-06T15:16:02Z" data-provider="parameterTestNG" finished-at="2015-09-06T15:16:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class org.openqa.selenium.opera.OperaDriver]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[argument type mismatch]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: argument type mismatch
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- existTest -->
-        <test-method status="FAIL" signature="simpleCheckTest()[pri:0, instance:null]" name="simpleCheckTest" duration-ms="1" started-at="2015-09-06T15:16:02Z" finished-at="2015-09-06T15:16:02Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.simpleCheckTest(): either make it static or add a no-args constructor to your class]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.simpleCheckTest(): either make it static or add a no-args constructor to your class
-	at org.testng.internal.Utils.checkInstanceOrStatic(Utils.java:795)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:40)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="simpleCheckTest()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="simpleCheckTest" duration-ms="1775" started-at="2015-09-06T23:08:40Z" finished-at="2015-09-06T23:08:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- simpleCheckTest -->
-        <test-method status="FAIL" signature="testDevide()[pri:0, instance:null]" name="testDevide" duration-ms="1" started-at="2015-09-06T15:16:02Z" finished-at="2015-09-06T15:16:02Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testDevide(): either make it static or add a no-args constructor to your class]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testDevide(): either make it static or add a no-args constructor to your class
-	at org.testng.internal.Utils.checkInstanceOrStatic(Utils.java:795)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:40)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="testDevide()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="testDevide" duration-ms="485" started-at="2015-09-06T23:08:41Z" finished-at="2015-09-06T23:08:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDevide -->
-        <test-method status="FAIL" signature="testMinus()[pri:0, instance:null]" name="testMinus" duration-ms="0" started-at="2015-09-06T15:16:02Z" finished-at="2015-09-06T15:16:02Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testMinus(): either make it static or add a no-args constructor to your class]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testMinus(): either make it static or add a no-args constructor to your class
-	at org.testng.internal.Utils.checkInstanceOrStatic(Utils.java:795)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:40)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="testMinus()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="testMinus" duration-ms="476" started-at="2015-09-06T23:08:42Z" finished-at="2015-09-06T23:08:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMinus -->
-        <test-method status="FAIL" signature="testPlus()[pri:0, instance:null]" name="testPlus" duration-ms="0" started-at="2015-09-06T15:16:02Z" finished-at="2015-09-06T15:16:02Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testPlus(): either make it static or add a no-args constructor to your class]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testPlus(): either make it static or add a no-args constructor to your class
-	at org.testng.internal.Utils.checkInstanceOrStatic(Utils.java:795)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:40)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="testPlus()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="testPlus" duration-ms="487" started-at="2015-09-06T23:08:42Z" finished-at="2015-09-06T23:08:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPlus -->
-        <test-method status="FAIL" signature="testUmnog()[pri:0, instance:null]" name="testUmnog" duration-ms="1" started-at="2015-09-06T15:16:02Z" finished-at="2015-09-06T15:16:02Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testUmnog(): either make it static or add a no-args constructor to your class]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can't invoke public void parametrizedSelenium.HHCalcTestNG.testUmnog(): either make it static or add a no-args constructor to your class
-	at org.testng.internal.Utils.checkInstanceOrStatic(Utils.java:795)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:40)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="testUmnog()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="testUmnog" duration-ms="398" started-at="2015-09-06T23:08:43Z" finished-at="2015-09-06T23:08:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUmnog -->
+        <test-method status="PASS" signature="endClass()[pri:0, instance:parametrizedSelenium.HHCalcTestNG@188af83]" name="endClass" is-config="true" duration-ms="452" started-at="2015-09-06T23:08:43Z" finished-at="2015-09-06T23:08:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endClass -->
       </class> <!-- parametrizedSelenium.HHCalcTestNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
