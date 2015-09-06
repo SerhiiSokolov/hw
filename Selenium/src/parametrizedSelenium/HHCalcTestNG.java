@@ -1,82 +1,67 @@
 package parametrizedSelenium;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-
-public class HHCalcTestNG extends Assert
-{
-	public static WebDriver driver;
+public class HHCalcTestNG {
+	WebDriver driver=null;
+	@Factory(dataProvider = "dataMethod")
+	public HHCalcTestNG(WebDriver driver) {
+		this.driver=driver;
+	}
 
 	@DataProvider
-	public static Object[][] parameterTestNG() {
-		return new Object[][] {
-			{ FirefoxDriver.class },
-			{ ChromeDriver.class },
-			{ OperaDriver.class },			
+	public static Object[][] dataMethod() {
+		System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
+		System.setProperty("webdriver.opera.driver", "drivers//operadriver.exe");
+		return new Object[][] { 
+			{ new FirefoxDriver()},
+			{ new OperaDriver()},
+			{ new ChromeDriver() }
 		};
 	}
 	
-	public HHCalcTestNG(Class driverClass) throws InstantiationException, IllegalAccessException 
-	{
-		driver = (WebDriver)driverClass.newInstance();
-		driver.get("file:///d:/Java/ex_calk.html");
-		
-	}
-	
-	public void setUp()
-	{
-		System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
-		System.setProperty("webdriver.opera.driver", "drivers//operadriver.exe");
-
-	}
-
-	public void endTest()
+	@AfterClass
+	public void endClass()
 	{
 		driver.close();
 		driver.quit();
 	}
-	@Test(dataProvider = "parameterTestNG")
-	public static void existTest(WebDriver driver)
-	{
-		boolean result=true;
-		try {
-			driver.findElement(By.id("btn1"));
-			driver.findElement(By.id("btn2"));
-			driver.findElement(By.id("btn3"));
-			driver.findElement(By.id("btn4"));
-			driver.findElement(By.id("btn5"));
-			driver.findElement(By.id("btn6"));
-			driver.findElement(By.id("btn7"));
-			driver.findElement(By.id("btn8"));
-			driver.findElement(By.id("btn9"));
-			driver.findElement(By.id("btn0"));
-			driver.findElement(By.id("btnplus"));
-			driver.findElement(By.id("btnminus"));
-			driver.findElement(By.id("btnumnog"));
-			driver.findElement(By.id("btncount"));
-			driver.findElement(By.id("btndevide"));
-			driver.findElement(By.id("action"));
-		} catch (NoSuchElementException e) {
-			System.out.println(e);
-			result=false;
-		}
-		assertEquals(true, result);
-	}
 
+	@Test
+	public void existTest()
+	{
+		driver.get("file:///d:/Java/ex_calk.html");
+		assertEquals(true, driver.findElement(By.id("btn1")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn2")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn3")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn4")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn5")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn6")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn7")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn8")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn9")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btn0")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btnplus")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btnminus")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btnumnog")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btncount")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("btndevide")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("action")).isEnabled());
+		assertEquals(true, driver.findElement(By.id("txt1")).isEnabled());
+	}
+	
 	@Test
 	public void simpleCheckTest() 
 	{
@@ -140,24 +125,28 @@ public class HHCalcTestNG extends Assert
 			driver.findElement(By.id("btnminus")).click();
 			res = driver.findElement(By.id("action")).getAttribute("value");
 			assertEquals("-", res);
-
+			driver.findElement(By.id("txt1")).clear();
+			
 			driver.findElement(By.id("btnumnog")).click();
 			res = driver.findElement(By.id("action")).getAttribute("value");
 			assertEquals("*", res);
+			driver.findElement(By.id("txt1")).clear();
 
 			driver.findElement(By.id("btncount")).click();
 			res = driver.findElement(By.id("action")).getAttribute("value");
 			assertEquals("=", res);
+			driver.findElement(By.id("txt1")).clear();
 
 			driver.findElement(By.id("btndevide")).click();
 			res = driver.findElement(By.id("action")).getAttribute("value");
 			assertEquals("/", res);
+			driver.findElement(By.id("txt1")).clear();
 
 		} catch (NoSuchElementException e) {
 			System.out.println(e);
 		}
-	}	
-
+	}
+	
 	@Test
 	public void testPlus() 
 	{
@@ -168,7 +157,8 @@ public class HHCalcTestNG extends Assert
 		driver.findElement(By.id("btn6")).click();
 		driver.findElement(By.id("btncount")).click();
 		String res = driver.findElement(By.id("txt1")).getAttribute("value");
-		assertEquals("108", res);
+		AssertJUnit.assertEquals("108", res);
+		driver.findElement(By.id("txt1")).clear();
 	}
 
 	@Test
@@ -181,7 +171,8 @@ public class HHCalcTestNG extends Assert
 		driver.findElement(By.id("btn6")).click();
 		driver.findElement(By.id("btncount")).click();
 		String res = driver.findElement(By.id("txt1")).getAttribute("value");
-		assertEquals("-84", res);
+		AssertJUnit.assertEquals("-84", res);
+		driver.findElement(By.id("txt1")).clear();
 	}
 
 	@Test
@@ -193,7 +184,8 @@ public class HHCalcTestNG extends Assert
 		driver.findElement(By.id("btn5")).click();
 		driver.findElement(By.id("btncount")).click();
 		String res = driver.findElement(By.id("txt1")).getAttribute("value");
-		assertEquals("60", res);
+		AssertJUnit.assertEquals("60", res);
+		driver.findElement(By.id("txt1")).clear();
 	}
 
 	@Test
@@ -206,6 +198,8 @@ public class HHCalcTestNG extends Assert
 		driver.findElement(By.id("btn3")).click();
 		driver.findElement(By.id("btncount")).click();
 		String res = driver.findElement(By.id("txt1")).getAttribute("value");
-		assertEquals("3", res);
+		AssertJUnit.assertEquals("3", res);
+		driver.findElement(By.id("txt1")).clear();
 	}
 }
+

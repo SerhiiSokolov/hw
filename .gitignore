@@ -48,3 +48,4 @@ Temporary Items
 .sha*
 .m2
 .gitignore
+test-output/

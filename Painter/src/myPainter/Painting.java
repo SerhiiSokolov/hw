@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class Painting extends JPanel implements MouseListener, MouseMotionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4821593374213442667L;
 	boolean flag=false;
 	int x=0;
 	int y=0;

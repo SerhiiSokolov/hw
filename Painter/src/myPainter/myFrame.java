@@ -26,6 +26,10 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 
 public class myFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4593302136334193661L;
 	private File fileName;
 	Painting canvas=new Painting();
 	public myFrame() {
@@ -93,8 +97,9 @@ public class myFrame extends JFrame {
 			}
 		});
 		mainBar.add(boxSelectWidth);
-		gui.add(mainBar, new BorderLayout().PAGE_START);
-		gui.add(canvas, new BorderLayout().CENTER);
+		new BorderLayout();
+		gui.add(mainBar, BorderLayout.PAGE_START);
+		gui.add(canvas, BorderLayout.CENTER);
 		gui.setVisible(true);
 	}
 
