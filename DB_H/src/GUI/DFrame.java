@@ -1,9 +1,11 @@
-package GUI;
+package gui;
 
 import javax.swing.JFrame;
 
 public class DFrame extends JFrame 
 {
+	private static final long serialVersionUID = 5536355761486196118L;
+
 	public DFrame() 
 	{
 		setTitle("Db Job");

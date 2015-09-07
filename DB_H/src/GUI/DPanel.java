@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,6 +39,7 @@ public class DPanel extends JPanel
 		JComboBox boxSelectDB=new JComboBox(selectDB);
 		boxSelectDB.setBounds(420, 10, 120, 20);
 		boxSelectDB.setEditable(false);
+//		ComboBoxSelectDB boxSelectDB=new ComboBoxSelectDB();
 		add(boxSelectDB);
 		boxSelectDB.addActionListener(new ActionListener() 
 		{
@@ -56,6 +57,7 @@ public class DPanel extends JPanel
 				"JSON",
 				"XML"				
 		};
+		
 		JComboBox boxSelectImpType=new JComboBox(impType);
 		boxSelectImpType.setBounds(420, 60, 120, 20);
 		boxSelectImpType.setEditable(false);
@@ -69,6 +71,7 @@ public class DPanel extends JPanel
 				mdl.setImpType(imp);
 			}
 		});
+		
 		JButton beginImport=new JButton("IMPORT");
 		beginImport.setBounds(420, 80, 120, 20);
 		add(beginImport);

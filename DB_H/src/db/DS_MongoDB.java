@@ -1,18 +1,9 @@
 package db;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collection;
-
 import org.bson.Document;
-
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 
@@ -21,7 +12,6 @@ import person.Person;
 public class DS_MongoDB implements DS {
 	@Override
 	public void create(Person p) {
-		ArrayList<Person> pp = new ArrayList<Person>();
 		MongoClientURI conn=new MongoClientURI("mongodb://localhost:27017");
 		MongoClient mongoClient = new MongoClient(conn);
 		MongoDatabase database=mongoClient.getDatabase("test");

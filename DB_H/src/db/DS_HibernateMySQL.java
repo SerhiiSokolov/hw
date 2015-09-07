@@ -28,6 +28,7 @@ public class DS_HibernateMySQL implements DS {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Person> read() {
 		ArrayList<Person> pp = new ArrayList<Person>();
