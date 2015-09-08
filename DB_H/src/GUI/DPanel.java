@@ -39,7 +39,6 @@ public class DPanel extends JPanel
 		JComboBox boxSelectDB=new JComboBox(selectDB);
 		boxSelectDB.setBounds(420, 10, 120, 20);
 		boxSelectDB.setEditable(false);
-//		ComboBoxSelectDB boxSelectDB=new ComboBoxSelectDB();
 		add(boxSelectDB);
 		boxSelectDB.addActionListener(new ActionListener() 
 		{
