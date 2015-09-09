@@ -1,5 +1,8 @@
 package tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BsTree implements BS {
 	private Node root=null;
 	private int count=0;
@@ -35,7 +38,7 @@ public class BsTree implements BS {
 			}
 		}
 	}
-	
+
 	public void clear(){
 		root=null;
 	}
@@ -87,7 +90,7 @@ public class BsTree implements BS {
 		}
 		getNodes(next.right);
 	}
-	
+
 	@Override
 	public int leafs() {
 		count=0;
@@ -110,14 +113,39 @@ public class BsTree implements BS {
 	}
 	private int getHight(Node next) {
 		if(next == null) return 0;
-        return 1 + Math.max(getHight(next.left), getHight(next.right));
+		return 1 + Math.max(getHight(next.left), getHight(next.right));
 	}
-	
+
 	@Override
 	public int width() {
-		// TODO Auto-generated method stub
-		return 0;
+		Node next=root;
+		int maxWidth=0;
+		int i;
+		int width=0;
+		int h=hight();
+		for(i=1;i<=h;i++){
+			width=getWidth(next, i);
+			if(width > maxWidth)
+				maxWidth  = width;
+		}
+		return maxWidth;
 	}
+	private int getWidth(Node next,int level)
+	{
+		if (next==null) return 0;
+		if (level == 1) return 1;
+		else 
+			return getWidth(next.left, level-1) +  getWidth(next.right, level-1);
+	}
+//	static void contLevelOrder(Node top){
+//		Queue<Node> queue=new LinkedList<> ();
+//		do{
+//			top.
+//			if (top.left!=null) queue.add(top.left);
+//			if (top.right!=null) queue.add(top.right);
+//			if (!queue.isEmpty()) top=queue.poll();
+//		}while (!queue.isEmpty());
+//	}
 
 	@Override
 	public void reverse() {

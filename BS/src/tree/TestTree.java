@@ -3,11 +3,13 @@ package tree;
 public class TestTree {
 
 	public static void main(String[] args) {
-		//int[] ar={12,10,22,5,8,6,18};
-		int[] ar={5,2,6};
+		int[] ar={50,25,10,30,5,15,27,35,90,75,125,70,80,110,130};
+		//int[] ar={5,2,6};
 		BsTree bsTree=new BsTree();
 		bsTree.init(ar);
 //		bsTree.add(19);
+//		bsTree.add(20);
+//		bsTree.add(21);
 //		bsTree.print();
 //		System.out.println("size="+bsTree.size());
 //		bsTree.add(28);
@@ -20,5 +22,6 @@ public class TestTree {
 		System.out.println("leafs="+bsTree.leafs());
 		System.out.println("nodes="+bsTree.nodes());
 		System.out.println("hight="+bsTree.hight());
+		System.out.println("width="+bsTree.width());
 	}
 }
