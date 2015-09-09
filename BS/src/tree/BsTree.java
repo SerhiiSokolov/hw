@@ -1,91 +1,118 @@
 package tree;
 
 public class BsTree implements BS {
-	Node root=null;
-	static int count=0;
-	
+	private Node root=null;
+	private int count=0;
+	private int[] array;
+
 	public void init(int ini[]){
 		for(int i:ini){
-			System.out.println("i="+i);
 			add(i);
 		}
 	}
 
 	public void add(int val) {
-		Node node=new Node(val);
-		Node next=null;
-		if (root==null) root=node;
+		if(root==null) root=new Node(val);
 		else{ 
-			next=root;
-			next=findParent(next, node);
-			if(next.data>node.data) next.left=node;
-			else next.right=node;
+			addNode(root,val);
 		}
-		System.out.println("end");
 	}
-
+	private void addNode(Node next,int val){
+		if(next.data>val){
+			if(next.left==null){
+				next.left=new Node(val);
+			}
+			else{
+				addNode(next.left, val);
+			}
+		}
+		else if(next.data<val){
+			if(next.right==null){
+				next.right=new Node(val);
+			}
+			else{
+				addNode(next.right, val);
+			}
+		}
+	}
+	
 	public void clear(){
 		root=null;
 	}
-	
-	private Node findParent(Node parent, Node node) {
-		Node tmp=null;
-		while (parent!=null)
-		{
-			System.out.println("parent data="+parent.data);
-			if(node.data>parent.data) {		
-				tmp=parent;
-				parent=parent.right;
-				System.out.println("right "+ tmp.data);
-			}
-			else  {
-				tmp=parent;
-				parent=parent.left;
-				System.out.println("left "+ tmp.data);
-			}
-		}
-
-		System.out.println("Data of parent element is "+tmp.data);
-		return tmp;
-	}
 
 	@Override
-	public int size() {		
-		Node next=root;
-		
-		return count;
+	public int size() {
+		count=0;
+		getSize(root);
+		return count; 
+	}
+	private void getSize(Node next){
+		if(next==null) return;
+		getSize(next.left);
+		count++;
+		getSize(next.right);
 	}
 
 	@Override
 	public int[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+		array=new int[size()];
+		count=0;
+		getArray(root);
+		return array;
+	}
+	private void getArray(Node next) {
+		if(next==null) return;
+		getArray(next.left);
+		array[count++]=next.data;
+		getArray(next.right);
 	}
 
 	@Override
 	public void del(int val) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public int nodes() {
-		// TODO Auto-generated method stub
-		return 0;
+		count=0;
+		getNodes(root);
+		return count;
 	}
-
+	private void getNodes(Node next) {
+		if(next==null) return;
+		getNodes(next.left);
+		if(next.left!=null||next.right!=null) {
+			count++;
+		}
+		getNodes(next.right);
+	}
+	
 	@Override
 	public int leafs() {
-		// TODO Auto-generated method stub
-		return 0;
+		count=0;
+		getLeafs(root);
+		return count;
+	}
+	private void getLeafs(Node next) {
+		if(next==null) return;
+		getLeafs(next.left);
+		if(next.left==null&&next.right==null) {
+			count++;
+		}
+		getLeafs(next.right);
 	}
 
 	@Override
 	public int hight() {
-		// TODO Auto-generated method stub
-		return 0;
+		count=getHight(root);
+		return count;
 	}
-
+	private int getHight(Node next) {
+		if(next == null) return 0;
+        return 1 + Math.max(getHight(next.left), getHight(next.right));
+	}
+	
 	@Override
 	public int width() {
 		// TODO Auto-generated method stub
@@ -95,16 +122,22 @@ public class BsTree implements BS {
 	@Override
 	public void reverse() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
-		
+		printTree(root);
+		System.out.println();
 	}
-	
-	public class Node{
+	private void printTree(Node next){
+		if(next==null) return;
+		printTree(next.left);
+		System.out.print(next.data+",");
+		printTree(next.right);
+	}
+
+	private class Node{
 		int data;
 		Node left;
 		Node right;
