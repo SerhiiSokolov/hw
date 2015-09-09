@@ -137,20 +137,27 @@ public class BsTree implements BS {
 		else 
 			return getWidth(next.left, level-1) +  getWidth(next.right, level-1);
 	}
-//	static void contLevelOrder(Node top){
-//		Queue<Node> queue=new LinkedList<> ();
-//		do{
-//			top.
-//			if (top.left!=null) queue.add(top.left);
-//			if (top.right!=null) queue.add(top.right);
-//			if (!queue.isEmpty()) top=queue.poll();
-//		}while (!queue.isEmpty());
-//	}
 
 	@Override
 	public void reverse() {
-		// TODO Auto-generated method stub
-
+		makeRevers(root);
+	}	
+	private void makeRevers(Node next){
+		Node temp=next;
+		
+		if(next!=null)
+		{
+			if(next.left!=null  &&  next.right!=null) 
+			{
+				temp = next.left;
+				next.left = next.right;
+				next.right = temp;
+				makeRevers(next.left);
+				makeRevers(next.right);
+			}	
+			else if (next.left!=null && next.right==null) makeRevers(next.left);
+			else if (next.left==null &&  next.right!=null) makeRevers(next.right);
+		}
 	}
 
 	@Override

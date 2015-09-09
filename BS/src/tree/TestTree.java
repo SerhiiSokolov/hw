@@ -23,5 +23,8 @@ public class TestTree {
 		System.out.println("nodes="+bsTree.nodes());
 		System.out.println("hight="+bsTree.hight());
 		System.out.println("width="+bsTree.width());
+		bsTree.reverse();
+		System.out.println("After revers");
+		bsTree.print();
 	}
 }
