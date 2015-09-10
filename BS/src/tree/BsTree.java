@@ -1,16 +1,16 @@
 package tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class BsTree implements BS {
 	private Node root=null;
 	private int count=0;
 	private int[] array;
-
+	private String string;
 	public void init(int ini[]){
-		for(int i:ini){
-			add(i);
+		if(ini==null) root=null;
+		else {
+			for(int i:ini){
+				add(i);
+			}
 		}
 	}
 
@@ -144,10 +144,10 @@ public class BsTree implements BS {
 	}	
 	private void makeRevers(Node next){
 		Node temp=next;
-		
+
 		if(next!=null)
 		{
-			if(next.left!=null  &&  next.right!=null) 
+			if(next.left!=null  ||  next.right!=null) 
 			{
 				temp = next.left;
 				next.left = next.right;
@@ -155,8 +155,6 @@ public class BsTree implements BS {
 				makeRevers(next.left);
 				makeRevers(next.right);
 			}	
-			else if (next.left!=null && next.right==null) makeRevers(next.left);
-			else if (next.left==null &&  next.right!=null) makeRevers(next.right);
 		}
 	}
 
@@ -170,6 +168,22 @@ public class BsTree implements BS {
 		printTree(next.left);
 		System.out.print(next.data+",");
 		printTree(next.right);
+	}
+
+	public String toString(){
+		if(root==null) string="";
+		else{ 
+			string="[";
+			getString(root);
+			string+="]";
+		}
+		return string;
+	}	
+	private void getString(Node next) {
+		if(next==null) return;
+		getString(next.left);
+		string=string+next.data+",";
+		getString(next.right);
 	}
 
 	private class Node{
