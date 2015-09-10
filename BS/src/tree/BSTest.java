@@ -194,7 +194,7 @@ public class BSTest {
 	//=====================================
 	// nodes
 	//=====================================
-	
+
 	@Test
 	public void nodes_null() 
 	{
@@ -232,50 +232,89 @@ public class BSTest {
 		assertEquals(exp, act);
 	}
 
-		//=====================================
-		// reverse
-		//=====================================
-		@Test
-		public void testReverse_0() 
-		{
-	
-			int[] ini = {};
-			bs.init(ini);
-			bs.reverse();
-			int[] exp = {};
-			int[] act = bs.toArray();
-			assertArrayEquals(exp, act);
-		}
-		@Test
-		public void testReverse_1() 
-		{
-	
-			int[] ini = {10};
-			bs.init(ini);
-			bs.reverse();
-			int[] exp = {10};
-			int[] act = bs.toArray();
-			assertArrayEquals(exp, act);
-		}
-		@Test
-		public void testReverse_2() 
-		{
-	
-			int[] ini = {10,20};
-			bs.init(ini);
-			bs.reverse();
-			int[] exp = {20,10};
-			int[] act = bs.toArray();
-			assertArrayEquals(exp, act);
-		}
-		@Test
-		public void testReverse_many() 
-		{					
-			int[] ini = {10,20,33,77,11,24,19};
-			bs.init(ini);
-			bs.reverse();
-			int[] exp = {77,33,24,20,19,11,10};
-			int[] act = bs.toArray();
-			assertArrayEquals(exp, act);
-		}
+	//=====================================
+	// leafs
+	//=====================================
+	@Test
+	public void leafs_null() 
+	{
+		int[] ini = {};
+		bs.init(ini);
+		int exp = 0;
+		int act = bs.leafs();
+		assertEquals(exp, act);
+	}	
+	@Test
+	public void leafs_1() 
+	{
+		int[] ini = {10};
+		bs.init(ini);
+		int exp = 0;
+		int act = bs.leafs();
+		assertEquals(exp, act);
+	}	
+	@Test
+	public void leafs_2() 
+	{
+		int[] ini = {10,20};
+		bs.init(ini);
+		int exp = 1;
+		int act = bs.leafs();
+		assertEquals(exp, act);
+	}
+	@Test
+	public void leafs_many() 
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		bs.init(ini);
+		int exp = 3;
+		int act = bs.nodes();
+		assertEquals(exp, act);
+	}
+	//=====================================
+	// reverse
+	//=====================================
+	@Test
+	public void testReverse_0() 
+	{
+
+		int[] ini = {};
+		bs.init(ini);
+		bs.reverse();
+		int[] exp = {};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void testReverse_1() 
+	{
+
+		int[] ini = {10};
+		bs.init(ini);
+		bs.reverse();
+		int[] exp = {10};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void testReverse_2() 
+	{
+
+		int[] ini = {10,20};
+		bs.init(ini);
+		bs.reverse();
+		int[] exp = {20,10};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void testReverse_many() 
+	{					
+		int[] ini = {10,20,33,77,11,24,19};
+		bs.init(ini);
+		bs.reverse();
+		int[] exp = {77,33,24,20,19,11,10};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
 }
