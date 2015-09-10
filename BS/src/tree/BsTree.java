@@ -72,8 +72,20 @@ public class BsTree implements BS {
 
 	@Override
 	public void del(int val) {
-		// TODO Auto-generated method stub
+	
+	}
 
+	private void delData(int val) {
+//		if(root.data==val) {
+//			if(root.left!=null){
+//				Node temp=root.right;
+//				root=root.left;
+//				root.right=temp;
+//			}
+//			else{
+//				root=root.right;
+//			}
+//		}
 	}
 
 	@Override
@@ -160,6 +172,7 @@ public class BsTree implements BS {
 
 	@Override
 	public void print() {
+		System.out.println("Print tree:");
 		printTree(root);
 		System.out.println();
 	}

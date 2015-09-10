@@ -33,7 +33,7 @@ public class BSTest {
 	}
 
 	//=====================================
-	// size, init, toArray
+	// size, init, toArray, print
 	//=====================================
 	@Test
 	public void testSize_null() 
@@ -43,6 +43,7 @@ public class BSTest {
 		assertEquals(0, bs.size());
 		int[] exp = {};
 		int[] act = bs.toArray();
+		bs.print();
 		assertArrayEquals(exp, act);
 	}
 	@Test
@@ -53,6 +54,7 @@ public class BSTest {
 		assertEquals(0, bs.size());
 		int[] exp = {};
 		int[] act = bs.toArray();
+		bs.print();
 		assertArrayEquals(exp, act);
 	}
 	@Test
@@ -64,17 +66,18 @@ public class BSTest {
 		assertEquals(1, bs.size());
 		int[] exp = {10};
 		int[] act = bs.toArray();
+		bs.print();
 		assertArrayEquals(exp, act);
 	}
 	@Test
 	public void testSize_2() 
 	{
-
 		int[] ini = {10,20};
 		bs.init(ini);
 		assertEquals(2, bs.size());
 		int[] exp = {10,20};
 		int[] act = bs.toArray();
+		bs.print();
 		assertArrayEquals(exp, act);
 	}
 	@Test
@@ -86,6 +89,7 @@ public class BSTest {
 		assertEquals(7, bs.size());
 		int[] exp = {10,11,19,20,24,33,77};
 		int[] act = bs.toArray();
+		bs.print();
 		assertArrayEquals(exp, act);
 	}
 	//=====================================
@@ -249,7 +253,7 @@ public class BSTest {
 	{
 		int[] ini = {10};
 		bs.init(ini);
-		int exp = 0;
+		int exp = 1;
 		int act = bs.leafs();
 		assertEquals(exp, act);
 	}	
@@ -268,7 +272,87 @@ public class BSTest {
 		int[] ini = {10,20,33,77,11,24,19};
 		bs.init(ini);
 		int exp = 3;
-		int act = bs.nodes();
+		int act = bs.leafs();
+		assertEquals(exp, act);
+	}
+
+	//=====================================
+	// hight
+	//=====================================
+	@Test
+	public void hight_null() 
+	{
+		int[] ini = {};
+		bs.init(ini);
+		int exp = 0;
+		int act = bs.hight();
+		assertEquals(exp, act);
+	}	
+	@Test
+	public void hight_1() 
+	{
+		int[] ini = {10};
+		bs.init(ini);
+		int exp = 1;
+		int act = bs.hight();
+		assertEquals(exp, act);
+	}	
+	@Test
+	public void hight_2() 
+	{
+		int[] ini = {10,20};
+		bs.init(ini);
+		int exp = 2;
+		int act = bs.hight();
+		assertEquals(exp, act);
+	}
+	@Test
+	public void hight_many() 
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		bs.init(ini);
+		int exp = 4;
+		int act = bs.hight();
+		assertEquals(exp, act);
+	}
+
+	//=====================================
+	// width
+	//=====================================
+	@Test
+	public void width_null() 
+	{
+		int[] ini = {};
+		bs.init(ini);
+		int exp = 0;
+		int act = bs.width();
+		assertEquals(exp, act);
+	}	
+	@Test
+	public void width_1() 
+	{
+		int[] ini = {10};
+		bs.init(ini);
+		int exp = 1;
+		int act = bs.width();
+		assertEquals(exp, act);
+	}	
+	@Test
+	public void width_2() 
+	{
+		int[] ini = {10,20};
+		bs.init(ini);
+		int exp = 1;
+		int act = bs.width();
+		assertEquals(exp, act);
+	}
+	@Test
+	public void width_many() 
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		bs.init(ini);
+		int exp = 3;
+		int act = bs.width();
 		assertEquals(exp, act);
 	}
 	//=====================================
