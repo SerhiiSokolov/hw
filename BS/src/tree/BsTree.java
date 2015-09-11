@@ -5,6 +5,7 @@ public class BsTree implements BS {
 	private int count=0;
 	private int[] array;
 	private String string;
+	
 	public void init(int ini[]){
 		if(ini==null) root=null;
 		else {
@@ -13,7 +14,17 @@ public class BsTree implements BS {
 			}
 		}
 	}
-
+	
+	public void lookForData(int val){
+		Node temp=lookUp(root,val);
+		System.out.println("Node data="+temp.data);
+	}
+	private Node lookUp(Node next, int val) {
+		if (next==null) return null;		
+		if(next.data>val) return lookUp(next.left,val);
+		else if(next.data<val) return lookUp(next.right,val);
+		return next;
+	}
 	public void add(int val) {
 		if(root==null) root=new Node(val);
 		else{ 
