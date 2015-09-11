@@ -1,10 +1,8 @@
 package tree;
 
 import static org.junit.Assert.*;
-
 import java.util.Arrays;
 import java.util.Collection;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -151,6 +149,56 @@ public class BSTest {
 		bs.add(99);
 		assertEquals(8, bs.size());
 		int[] exp = {10,11,19,20,24,33,77,99};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	//=====================================
+	// del
+	//=====================================
+	@Test
+	public void testDel() 
+	{
+		int[] ini = {};
+		bs.init(ini);
+		bs.del(99);
+		assertEquals(0, bs.size());
+		int[] exp = {};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void testDel_1() 
+	{
+		int[] ini = {10};
+		bs.init(ini);
+		bs.del(10);
+		assertEquals(0, bs.size());
+		int[] exp = {};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void testDel_2() 
+	{
+
+		int[] ini = {10,20};
+		bs.init(ini);
+		bs.del(10);
+		assertEquals(1, bs.size());
+		int[] exp = {20};
+		int[] act = bs.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void testDel_many() 
+	{
+
+		int[] ini = {10,20,33,77,11,24,19};
+		bs.init(ini);
+		bs.del(77);
+		assertEquals(6, bs.size());
+		int[] exp = {10,11,19,20,24,33};
 		int[] act = bs.toArray();
 		assertArrayEquals(exp, act);
 	}
