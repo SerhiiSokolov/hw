@@ -72,20 +72,38 @@ public class BsTree implements BS {
 
 	@Override
 	public void del(int val) {
-	
+		root = delData(val, root );
 	}
+	private Node delData(int val, Node next) {
+		if( next == null )
+			return null;   // Item not found; do nothing
+		if(val<next.data){
+			next.left=delData(val,next.left);
+		}
+		else if(val>next.data){
+			next.right=delData(val, next.right);
 
-	private void delData(int val) {
-//		if(root.data==val) {
-//			if(root.left!=null){
-//				Node temp=root.right;
-//				root=root.left;
-//				root.right=temp;
-//			}
-//			else{
-//				root=root.right;
-//			}
-//		}
+		}
+		else if(next.left!=null && next.right!=null){
+			next.data=findMin(next.right).data;
+			next.right=delData(next.data, next.right);
+		}
+		else {
+			if(next.left!=null){
+				next=next.left;
+			}
+			else{
+				next=next.right;
+			}
+		}
+		return next;
+	}
+	private Node findMin(Node next) {    
+		if( next == null )
+			return null;
+		else if( next.left == null )
+			return next;
+		return findMin(next.left);
 	}
 
 	@Override
@@ -156,7 +174,6 @@ public class BsTree implements BS {
 	}	
 	private void makeRevers(Node next){
 		Node temp=next;
-
 		if(next!=null)
 		{
 			if(next.left!=null  ||  next.right!=null) 
